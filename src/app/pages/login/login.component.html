@@ -1,0 +1,25 @@
+<div class="login-wrapper">
+    <form class="login" [formGroup]="loginForm" novalidate>
+        <section class="title">
+            <h3 class="welcome">Bienvenid@ eres a</h3>
+            Tasker
+            <h5 class="hint">Ingresa tus correo electrónico y contraseña, o utiliza el ID de tu organización</h5>
+        </section>
+        <div class="login-group">
+            <clr-input-container>
+                <label class="clr-sr-only">Correo electrónico</label>
+                <input formControlName="email" type="email" name="email" clrInput placeholder="example@yourcompany.com" />
+            </clr-input-container>
+            <clr-password-container>
+                <label class="clr-sr-only">Password</label>
+                <input formControlName="password" type="password" name="password" clrPassword placeholder="*********" />
+            </clr-password-container>
+            <div class="btn-group btn-primary">
+                <button [disabled]="!loginForm.valid" [clrLoading]="loginbtnState" (click)="doLogin()" type="submit" class="btn btn-primary">Acceder</button>
+                <button (click)="doLogin()" class="btn btn-success">Registrarse</button>
+            </div>
+            
+            
+        </div>
+    </form>
+</div>

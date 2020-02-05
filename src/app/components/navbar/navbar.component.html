@@ -1,0 +1,28 @@
+<clr-main-container>
+    <clr-header class="header-2">
+        <div class="branding">
+            <a routerLink="" class="nav-link">
+                <clr-icon shape="vm-bug"></clr-icon>
+                <span class="title">Tasker</span>
+            </a>
+        </div>
+      <div class="header-nav" [clr-nav-level]="1" *ngIf="auth.isLogged()">
+        <a *ngFor="let l of pages" [routerLink]="l.url" [ngClass]="{'active': url == l.url}" class="nav-link nav-text">{{l.text}}</a>
+      </div>
+      <div class="header-actions">
+        <clr-dropdown>
+            <button class="nav-text" clrDropdownTrigger aria-label="open user profile">
+                john
+                <clr-icon shape="caret down"></clr-icon>
+            </button>
+            <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+                <a href="..." clrDropdownItem>Cuenta</a>
+                <a href="..." clrDropdownItem>Cerrar sesión</a>
+            </clr-dropdown-menu>
+        </clr-dropdown>
+    </div>
+    </clr-header>
+        <main class="content-area">
+            <router-outlet></router-outlet>
+        </main>
+</clr-main-container>

@@ -1,0 +1,32 @@
+<div class="content-container">
+    <div class="content-area">
+        <div class="clr-row">
+            <div class="clr-col-lg-6 clr-col-12" *ngFor="let t of teams">
+                <div class="card clickable">
+                    <div class="card-header">
+                        <a routerLink="/team/{{t._id}}">{{t.name}}</a>
+                    </div>
+                    <div class="card-block">
+                        <div class="card-media-block">
+                            <img src="http://localhost:5580/teams/image/{{t._id}}" class="card-media-image">
+                            <div class="card-media-description">
+                                <span class="card-media-title">
+                                    {{t.description}}
+                                </span>
+                                <span class="card-media-text">
+                                    Propietario: <a routerLink="/profile/{{t.integrants[0].user._id}}">{{t.integrants[0].user.name}} {{t.integrants[0].user.surname}}</a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-text">
+                            {{t.description}}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-sm btn-link">Unirse</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

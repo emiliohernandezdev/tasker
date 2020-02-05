@@ -1,0 +1,41 @@
+<div class="content-container">
+    <div class="content-area">
+        <div class="clr-row">
+            <div class="clr-col-lg-4 clr-col-12">
+                <a class="card">
+                    <div class="card-img">
+                        <img src="http://localhost:5580/teams/image/{{team._id}}">
+                    </div>
+                    <div class="card-block">
+                        <h2>{{team.name}}</h2>
+                        <p class="card-text">
+                            {{team.description}}
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="clr-col-lg-8 clr-col-12">
+                <a class="card clickable">
+                    <div class="card-block">
+                        <h2 class="card-title">
+                            Información del equipo:
+                        </h2>
+                        <clr-accordion>
+                            <clr-accordion-panel>
+                                <clr-accordion-title>{{team.integrants.length}} participantes</clr-accordion-title>
+                                <clr-accordion-content *ngFor="let i of team.integrants">
+                                    <ul class="list">
+                                        <li><a routerLink="/profile/{{i.user._id}}">{{i.user.name}}
+                                                {{i.user.surname}}</a> - 
+                                                <span *ngIf="i.role == 'owner'"
+                                                class="label label-info">propietario</span></li>
+                                    </ul>
+                                </clr-accordion-content>
+                            </clr-accordion-panel>
+                        </clr-accordion>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
