@@ -23,7 +23,7 @@
     "@clr/icons": "2.3.6",
     "@clr/ui": "2.3.6",
     "@webcomponents/custom-elements": "^1.0.0",
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "jwt-decode": "^2.2.0",
     "ngx-bootstrap": "^5.3.2",
